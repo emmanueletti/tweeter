@@ -4,20 +4,30 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//
-
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  user: {
-    name: 'Newton',
-    avatars: 'https://i.imgur.com/73hZDYK.png',
-    handle: '@SirIsaac',
+const data = [
+  {
+    user: {
+      name: 'Newton',
+      avatars: 'https://i.imgur.com/73hZDYK.png',
+      handle: '@SirIsaac',
+    },
+    content: {
+      text: 'If I have seen further it is by standing on the shoulders of giants',
+    },
+    created_at: 1461116232227,
   },
-  content: {
-    text: 'If I have seen further it is by standing on the shoulders of giants',
+  {
+    user: {
+      name: 'Descartes',
+      avatars: 'https://i.imgur.com/nlhLi3I.png',
+      handle: '@rd',
+    },
+    content: {
+      text: 'Je pense , donc je suis',
+    },
+    created_at: 1461113959088,
   },
-  created_at: 1461116232227,
-};
+];
 
 // returns html markup for an individual tweet
 const createTweetElement = (data) => {
@@ -46,15 +56,52 @@ const createTweetElement = (data) => {
   `;
 };
 
-$(document).ready(() => {
-  const $tweet = createTweetElement(tweetData);
+const renderTweets = (data) => {
+  // loop throw each tweet in array of tweets
+  data.forEach((tweetData) => {
+    // create tweet card markup from each tweet
+    const tweet = createTweetElement(tweetData);
 
-  $('#tweets-container').append($tweet);
+    // add each tweet card markup to page
+    $('#tweets-container').append(tweet);
 
-  console.log($('.footer__date-created'));
-
-  $('.footer__date-created').each((index, el) => {
-    let time = $(el).text();
-    $(el).text(timeago.format(time));
+    // format the created time
+    $('.footer__date-created').each((index, el) => {
+      const $time = $(el).text();
+      $(el).text(timeago.format($time));
+    });
   });
+};
+
+$(document).ready(() => {
+  renderTweets(data);
+
+  const $form = $('#create-tweet')[0];
+  $($form).submit(function (event) {
+    // console.log($($form).serialize());
+
+    $.ajax({
+      url: '/tweets',
+      type: 'post',
+      // dataType: 'json',
+      data: $($form).serialize(),
+    });
+
+    //
+    // console.log(event);
+    event.preventDefault();
+  });
+
+
+  const loadTweets = () => {
+   $.ajax({
+     url: '/tweets',
+     type: 'get',
+     success: function (data) {
+       console.log(data);
+     },
+   });
+  }()
+
+
 });
