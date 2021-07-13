@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 400px;
+  background-color: #d79b28;
+  color: #fff;
+  position: relative;
+  z-index: 0;
+  background-image: url('../images/asfalt-dark.png');
+}

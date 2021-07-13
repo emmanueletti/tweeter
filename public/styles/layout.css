@@ -10,6 +10,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  border: 1px solid black;
 }
 
 /*
@@ -26,3 +27,9 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
+}

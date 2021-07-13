@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form--submit {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+[for='tweet-text'] {
+  font-weight: 600;
+  border-bottom: 2px solid black;
+  padding: 0.5rem 0;
+}
+
+.form--submit > button {
+  background-color: #4152a1;
+  color: white;
+}
+
+textarea {
+  background-color: inherit;
+}
