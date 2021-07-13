@@ -56,30 +56,31 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text" rows="1"></textarea>
           <div class="form--submit">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+      <section>
+        <article>
+          <header>
+            <div class="avatar">
+              <div class="user-icon"></div>
+              <h3 class="user-name">Newton</h3>
+            </div>
+            <h3 class="user-handle">@SirIsaac</h3>
+          </header>
+          <div></div>
+          <footer>
+            <div class="date-created"></div>
+            <div class="social-icons"></div>
+          </footer>
+        </article>
+      </section>
     </main>
 
-    <script>
-      const textBox = document.getElementById('tweet-text');
-
-      textBox.addEventListener('input', (e) => {
-        console.log('1: input event');
-      });
-      textBox.addEventListener('keyup', (e) => {
-        console.log('2: keyup event');
-      });
-      textBox.addEventListener('keydown', (e) => {
-        console.log('3: keydown event');
-      });
-      textBox.addEventListener('keypress', (e) => {
-        console.log('4: keypress event');
-      });
-    </script>
+    <script src="./scripts/composer-char-counter.js"></script>
   </body>
 </html>
