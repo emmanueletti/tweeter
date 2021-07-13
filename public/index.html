@@ -60,6 +60,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <!-- create a new tweet -->
+      <div id="alert--long" class="alert">Your tweet is too long</div>
+      <div id="alert--empty" class="alert">Your tweet is empty</div>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets" id="create-tweet">
@@ -67,6 +69,7 @@
           <textarea name="text" id="tweet-text" rows="1"></textarea>
           <div class="form--submit">
             <button type="submit">Tweet</button>
+
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>

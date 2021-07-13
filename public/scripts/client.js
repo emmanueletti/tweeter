@@ -114,13 +114,16 @@ $(document).ready(() => {
     const chars = $('#tweet-text').val();
 
     if (chars.length > 140) {
-      window.alert('Your tweet is too long');
+      $('#alert--long').slideDown();
       return;
     }
     if (!chars) {
-      window.alert('Your tweet is empty');
+      $('#alert--empty').slideDown();
       return;
     }
+
+    $('#alert--long').slideUp();
+    $('#alert--empty').slideUp();
 
     $.ajax({
       url: '/tweets',

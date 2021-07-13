@@ -32,3 +32,16 @@ textarea {
 .counter.negative {
   color: red;
 }
+
+.alert {
+  color: white;
+  background-color: red;
+  font-family: 'Bungee', cursive;
+  font-weight: 600;
+  margin: 1rem auto;
+  width: 30%;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+}
