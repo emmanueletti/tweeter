@@ -1,5 +1,3 @@
-'use strict';
-
 $(document).ready(() => {
   $('#tweet-text').on('input', function () {
     const chars = $(this).val().length;
