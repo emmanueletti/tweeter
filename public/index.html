@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="./styles/nav.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" />
+    <link rel="stylesheet" href="./styles/tweet-card.css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -41,7 +42,7 @@
       <span>tweeter</span>
       <i class="fas fa-angle-double-down"></i>
     </nav>
-    <header>
+    <header class="header">
       <div>
         <img src="/images/profile-hex.png" />
       </div>
@@ -64,18 +65,25 @@
         </form>
       </section>
       <section>
-        <article>
-          <header>
-            <div class="avatar">
-              <div class="user-icon"></div>
-              <h3 class="user-name">Newton</h3>
+        <article class="tweet-card">
+          <header class="tweet-card__header">
+            <div class="header__avatar">
+              <div class="avatar__icon">
+                <i class="fas fa-user-alt"></i>
+              </div>
+              <h3 class="avatar__name">Newton</h3>
             </div>
-            <h3 class="user-handle">@SirIsaac</h3>
+            <h3 class="header__handle">@SirIsaac</h3>
           </header>
-          <div></div>
-          <footer>
-            <div class="date-created"></div>
-            <div class="social-icons"></div>
+          <p class="tweet-card__body">If I have seen further it is by standing on the shoulders of giants</p>
+          <hr />
+          <footer class="tweet-card__footer">
+            <p class="footer__date-created">10 days ago</p>
+            <div class="footer__social-icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
           </footer>
         </article>
       </section>
