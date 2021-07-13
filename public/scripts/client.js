@@ -63,7 +63,7 @@ const renderTweets = (data) => {
     const tweet = createTweetElement(tweetData);
 
     // add each tweet card markup to page
-    $('#tweets-container').append(tweet);
+    $('#tweets-container').prepend(tweet);
 
     // format the created time
     $('.footer__date-created').each((index, el) => {
@@ -73,35 +73,41 @@ const renderTweets = (data) => {
   });
 };
 
-$(document).ready(() => {
-  renderTweets(data);
+const loadTweets = () => {
+  $.ajax({
+    url: '/tweets',
+    type: 'get',
+    success: function (data) {
+      renderTweets(data);
+    },
+  });
+};
 
+$(document).ready(() => {
+  // initial get reqest fo tweets
+  loadTweets();
+
+  // create new tweets event handler
   const $form = $('#create-tweet')[0];
   $($form).submit(function (event) {
-    // console.log($($form).serialize());
+    event.preventDefault();
+    // validate form data
+    const chars = $('#tweet-text').val();
+
+    if (chars.length > 140) {
+      window.alert('Your tweet is too long');
+      return;
+    }
+    if (!chars) {
+      window.alert('Your tweet is empty');
+      return;
+    }
 
     $.ajax({
       url: '/tweets',
       type: 'post',
-      // dataType: 'json',
       data: $($form).serialize(),
+      success: loadTweets(),
     });
-
-    //
-    // console.log(event);
-    event.preventDefault();
   });
-
-
-  const loadTweets = () => {
-   $.ajax({
-     url: '/tweets',
-     type: 'get',
-     success: function (data) {
-       console.log(data);
-     },
-   });
-  }()
-
-
 });
