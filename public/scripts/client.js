@@ -83,8 +83,20 @@ const loadTweets = () => {
   });
 };
 
+const loadNewestTweets = () => {
+  $.ajax({
+    url: '/tweets',
+    type: 'get',
+    success: function (data) {
+      const newestTweet = data[data.length - 1];
+
+      renderTweets([newestTweet]);
+    },
+  });
+};
+
 $(document).ready(() => {
-  // initial get reqest fo tweets
+  // initiality load all the tweets from server
   loadTweets();
 
   // create new tweets event handler
@@ -107,7 +119,9 @@ $(document).ready(() => {
       url: '/tweets',
       type: 'post',
       data: $($form).serialize(),
-      success: loadTweets(),
+      success: function (data) {
+        loadNewestTweets();
+      },
     });
   });
 });
