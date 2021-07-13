@@ -29,6 +29,13 @@ const data = [
   },
 ];
 
+// escapes potentially malicious user input
+const sanitize = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // returns html markup for an individual tweet
 const createTweetElement = (data) => {
   return `
@@ -42,7 +49,7 @@ const createTweetElement = (data) => {
             </div>
             <h3 class="header__handle">${data.user.handle}</h3>
           </header>
-          <p class="tweet-card__body">${data.content.text}</p>
+          <p class="tweet-card__body">${sanitize(data.content.text)}</p>
           <hr />
           <footer class="tweet-card__footer">
             <p class="footer__date-created">${data.created_at}</p>
