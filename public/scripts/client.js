@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    user: {
-      name: 'Newton',
-      avatars: 'https://i.imgur.com/73hZDYK.png',
-      handle: '@SirIsaac',
-    },
-    content: {
-      text: 'If I have seen further it is by standing on the shoulders of giants',
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: 'Descartes',
-      avatars: 'https://i.imgur.com/nlhLi3I.png',
-      handle: '@rd',
-    },
-    content: {
-      text: 'Je pense , donc je suis',
-    },
-    created_at: 1461113959088,
-  },
-];
-
 // escapes potentially malicious user input
 const sanitize = function (str) {
   let div = document.createElement('div');
@@ -52,7 +27,7 @@ const createTweetElement = (data) => {
           <p class="tweet-card__body">${sanitize(data.content.text)}</p>
           <hr />
           <footer class="tweet-card__footer">
-            <p class="footer__date-created">${data.created_at}</p>
+            <p class="footer__date-created">${timeago.format(data.created_at)}</p>
             <div class="footer__social-icons">
               <i class="fas fa-flag"></i>
               <i class="fas fa-retweet"></i>
@@ -71,12 +46,6 @@ const renderTweets = (data) => {
 
     // add each tweet card markup to page
     $('#tweets-container').prepend(tweet);
-
-    // format the created time
-    $('.footer__date-created').each((index, el) => {
-      const $time = $(el).text();
-      $(el).text(timeago.format($time));
-    });
   });
 };
 
@@ -103,7 +72,7 @@ const loadNewestTweets = () => {
 };
 
 $(document).ready(() => {
-  // initiality load all the tweets from server
+  // initially load all the tweets from server
   loadTweets();
 
   // create new tweets event handler
