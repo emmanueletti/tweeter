@@ -11,7 +11,15 @@
   bottom: 5%;
   left: 92%;
   text-decoration: none;
-  /* display: none; */
+}
+
+.scroll-btn:hover {
+  cursor: pointer;
+  background-color: green;
+}
+
+.hidden {
+  display: none;
 }
 
 .fa-angle-double-up {

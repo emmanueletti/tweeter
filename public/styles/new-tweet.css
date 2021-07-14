@@ -1,25 +1,28 @@
+.alert {
+  color: white;
+  background-color: red;
+  font-family: 'Bungee', cursive;
+  font-weight: 600;
+  margin: 1rem auto;
+  width: 40%;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+}
+
 .new-tweet {
   display: none;
 }
+
 form {
   display: flex;
   flex-direction: column;
 }
 
-.form--submit {
-  display: flex;
-  justify-content: space-between;
-  font-family: 'Bungee', cursive;
-}
-
 [for='tweet-text'] {
   font-weight: 600;
   padding: 0.5rem 0;
-}
-
-.form--submit > button {
-  background-color: #4152a1;
-  color: white;
 }
 
 textarea {
@@ -36,19 +39,21 @@ textarea::placeholder {
   font-weight: 600;
 }
 
-.counter.negative {
+.negative {
   color: red;
 }
 
-.alert {
-  color: white;
-  background-color: red;
+.form--submit {
+  display: flex;
+  justify-content: space-between;
   font-family: 'Bungee', cursive;
-  font-weight: 600;
-  margin: 1rem auto;
-  width: 30%;
-  padding: 0.5em 1em;
-  border-radius: 10px;
-  text-align: center;
-  display: none;
+}
+
+.form--submit-btn {
+  background-color: #4152a1;
+  color: white;
+}
+
+.form--submit-btn:hover {
+  cursor: pointer;
 }

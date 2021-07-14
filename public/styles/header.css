@@ -1,4 +1,5 @@
 .profile {
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,13 +7,10 @@
   border: 1px solid black;
   background-color: #d79b28;
   color: #fff;
-  /* position: relative; */
-  /* z-index: 0; */
   background-image: url('../images/asfalt-dark.png');
-  height: 500px;
 }
 
-.profile h2 {
+.profile__header {
   font-weight: 400;
 }
 

@@ -5,14 +5,16 @@
     <title>Tweeter - Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
-      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -21,74 +23,82 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
-      rel="stylesheet"
-    />
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
     <link rel="stylesheet" href="./styles/nav.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" />
     <link rel="stylesheet" href="./styles/tweet-card.css" />
-    <link rel="stylesheet" href="./styles/media-queries.css" />
     <link rel="stylesheet" href="./styles/scroll-btn.css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
-    <script src="./scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav id="#top">
+    <nav>
       <span>tweeter</span>
-      <div class="compose-btn">
+      <div class="nav__compose-btn">
         <p><span class="text--emphasis">Write</span> a new tweet</p>
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
 
+    <!-- hero / profile header -->
     <div class="row">
-      <div class="col col--smaller">
+      <div class="col col--small">
         <header class="profile">
           <div>
             <img src="/images/profile-hex.png" />
           </div>
           <br />
           <div>
-            <h2><span class="text--emphasis">Amy</span> Mansell</h2>
+            <h2 class="profile__header"><span class="text--emphasis">Amy</span> Mansell</h2>
           </div>
         </header>
       </div>
+
       <!-- Page-specific (main) content here -->
-      <main class="container col col--larger">
-        <!-- create a new tweet -->
+      <main class="container col col--large">
+        <!-- new tweet: error alerts -->
         <div id="alert--long" class="alert">Your tweet is too long</div>
         <div id="alert--empty" class="alert">Your tweet is empty</div>
+
+        <!-- new tweet: form -->
         <section class="new-tweet">
           <form method="POST" action="/tweets" id="create-tweet">
             <textarea name="text" id="tweet-text" rows="1" placeholder="What are you humming about?"></textarea>
             <div class="form--submit">
-              <button type="submit">Tweet</button>
+              <button class="form--submit-btn" type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>
         </section>
-        <!-- individual tweek cards -->
+
+        <!-- tweet cards -->
         <section id="tweets-container">
           <!-- dynamically placed in here  -->
         </section>
       </main>
     </div>
-    <a class="scroll-btn" href="#top">
+
+    <!-- scroll button -->
+    <div class="scroll-btn hidden">
       <i class="fas fa-angle-double-up"></i>
-    </a>
+    </div>
+
+    <!-- App JS -->
+    <script src="./scripts/helpers.js"></script>
+    <script src="./scripts/nav.js"></script>
+    <script src="./scripts/composer-char-counter.js"></script>
+    <script src="./scripts/scroll.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
   </body>
 </html>

@@ -13,8 +13,16 @@ html {
   /* border: 1px solid black; */
 }
 
+/* 
+* General Global styles
+*/
+
+.text--emphasis {
+  font-weight: 600;
+}
+
 /*
- * Global layout stuff
+ * Global  layout stuff
  */
 
 body {
@@ -24,17 +32,35 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.text--emphasis {
-  font-weight: 600;
-}
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
 main {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
   background-color: inherit;
+}
+
+.col--small {
+  margin-bottom: 40px;
+}
+
+/* responsive media queries */
+@media (min-width: 780px) {
+  .row {
+    display: flex;
+    padding: 3rem;
+    max-width: 100%;
+    /* gap: 200px; */
+  }
+
+  .header {
+    padding: 2em;
+  }
+
+  .col--small {
+    flex-grow: 1;
+  }
+  .col--large {
+    width: 50%;
+    margin-left: 10vw;
+  }
 }
