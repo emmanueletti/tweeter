@@ -4,7 +4,7 @@ Tweeter is a simple, single-page Twitter clone front end built with HTML, CSS, J
 
 ## Final Product
 
-!["Screenshot of login page"](https://github.com/emmanueletti/tinyapp/blob/master/docs/urls_login.png?raw=true)
+!["Screenshot of login page"](https://github.com/emmanueletti/tweeter/blob/master/docs/tweeter%20-%20desktop.png)
 
 !["Screenshot of URL main page"](https://github.com/emmanueletti/tinyapp/blob/master/docs/urls_manage.png?raw=true)
 
