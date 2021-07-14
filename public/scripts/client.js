@@ -131,6 +131,7 @@ $(document).ready(() => {
       data: $($form).serialize(),
       success: function (data) {
         loadNewestTweets();
+        $('#tweet-text').val('').focus();
       },
     });
   });

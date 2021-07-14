@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -34,6 +35,7 @@
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" />
     <link rel="stylesheet" href="./styles/tweet-card.css" />
+    <link rel="stylesheet" href="./styles/media-queries.css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -48,37 +50,40 @@
       <span>tweeter</span>
       <i class="fas fa-angle-double-down"></i>
     </nav>
-    <header class="header">
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div>
-        <h2>Your Name</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <!-- create a new tweet -->
-      <div id="alert--long" class="alert">Your tweet is too long</div>
-      <div id="alert--empty" class="alert">Your tweet is empty</div>
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets" id="create-tweet">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" rows="1"></textarea>
-          <div class="form--submit">
-            <button type="submit">Tweet</button>
 
-            <output name="counter" class="counter" for="tweet-text">140</output>
+    <div class="row">
+      <div class="col col--smaller">
+        <header class="header">
+          <div>
+            <img src="/images/profile-hex.png" />
           </div>
-        </form>
-      </section>
-
-      <!-- individual tweek cards -->
-      <section id="tweets-container">
-        <!-- dynamically placed in here  -->
-      </section>
-    </main>
+          <br />
+          <div>
+            <h2>Your Name</h2>
+          </div>
+        </header>
+      </div>
+      <!-- Page-specific (main) content here -->
+      <main class="container col col--larger">
+        <!-- create a new tweet -->
+        <div id="alert--long" class="alert">Your tweet is too long</div>
+        <div id="alert--empty" class="alert">Your tweet is empty</div>
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form method="POST" action="/tweets" id="create-tweet">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" rows="1"></textarea>
+            <div class="form--submit">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <!-- individual tweek cards -->
+        <section id="tweets-container">
+          <!-- dynamically placed in here  -->
+        </section>
+      </main>
+    </div>
   </body>
 </html>
