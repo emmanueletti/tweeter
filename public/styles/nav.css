@@ -15,3 +15,16 @@ nav {
 nav > span {
   font-family: 'Bungee', cursive;
 }
+
+.compose-btn {
+  text-align: center;
+}
+
+.compose-btn > p {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.compose-btn:hover {
+  cursor: pointer;
+}

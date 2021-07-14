@@ -135,4 +135,10 @@ $(document).ready(() => {
       },
     });
   });
+
+  // compose button
+  $('.compose-btn').on('click', function () {
+    $('.new-tweet').slideDown();
+    $('#tweet-text').focus();
+  });
 });

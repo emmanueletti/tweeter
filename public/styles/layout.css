@@ -24,6 +24,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.text--emphasis {
+  font-weight: 600;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -33,8 +37,4 @@ main {
   max-width: 1000px;
   margin: 0 auto;
   background-color: inherit;
-}
-
-div > img {
-  width: 100%;
 }

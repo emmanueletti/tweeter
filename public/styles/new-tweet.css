@@ -1,3 +1,6 @@
+.new-tweet {
+  display: none;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -27,6 +30,10 @@ textarea {
   border-bottom: 2px solid #545149;
   margin-bottom: 20px;
   outline: none;
+}
+
+textarea::placeholder {
+  font-weight: 600;
 }
 
 .counter.negative {

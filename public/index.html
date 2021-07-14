@@ -48,18 +48,21 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <i class="fas fa-angle-double-down"></i>
+      <div class="compose-btn">
+        <p><span class="text--emphasis">Write</span> a new tweet</p>
+        <i class="fas fa-angle-double-down"></i>
+      </div>
     </nav>
 
     <div class="row">
       <div class="col col--smaller">
-        <header class="header">
+        <header class="profile">
           <div>
             <img src="/images/profile-hex.png" />
           </div>
           <br />
           <div>
-            <h2>Your Name</h2>
+            <h2><span class="text--emphasis">Amy</span> Mansell</h2>
           </div>
         </header>
       </div>
@@ -69,10 +72,8 @@
         <div id="alert--long" class="alert">Your tweet is too long</div>
         <div id="alert--empty" class="alert">Your tweet is empty</div>
         <section class="new-tweet">
-          <h2>Compose Tweet</h2>
           <form method="POST" action="/tweets" id="create-tweet">
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text" rows="1"></textarea>
+            <textarea name="text" id="tweet-text" rows="1" placeholder="What are you humming about?"></textarea>
             <div class="form--submit">
               <button type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
