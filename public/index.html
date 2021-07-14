@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="./styles/new-tweet.css" />
     <link rel="stylesheet" href="./styles/tweet-card.css" />
     <link rel="stylesheet" href="./styles/media-queries.css" />
+    <link rel="stylesheet" href="./styles/scroll-btn.css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -46,7 +47,7 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav id="#top">
       <span>tweeter</span>
       <div class="compose-btn">
         <p><span class="text--emphasis">Write</span> a new tweet</p>
@@ -86,5 +87,8 @@
         </section>
       </main>
     </div>
+    <a class="scroll-btn" href="#top">
+      <i class="fas fa-angle-double-up"></i>
+    </a>
   </body>
 </html>

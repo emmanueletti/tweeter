@@ -110,7 +110,7 @@ $(document).ready(() => {
 
   // compose button
   $('.compose-btn').on('click', function () {
-    $('.new-tweet').slideDown();
+    $('.new-tweet').toggle('slow');
     $('#tweet-text').focus();
   });
 });
