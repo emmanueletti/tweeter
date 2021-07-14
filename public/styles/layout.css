@@ -10,7 +10,6 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-  /* border: 1px solid black; */
 }
 
 /* 
@@ -49,7 +48,6 @@ main {
     display: flex;
     padding: 3rem;
     max-width: 100%;
-    /* gap: 200px; */
   }
 
   .header {
@@ -59,6 +57,7 @@ main {
   .col--small {
     flex-grow: 1;
   }
+
   .col--large {
     width: 50%;
     margin-left: 10vw;

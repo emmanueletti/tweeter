@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  // composer character counter
+  // input event on composer text field to update character counter
   $('#tweet-text').on('input', function () {
     const chars = $(this).val().length;
     const counter = $(this).next().children('.counter')[0];
@@ -14,7 +14,7 @@ $(document).ready(() => {
     }
   });
 
-  // post request to create a new tweet followed by get reqeust to re-render page with new post
+  // submit event on form to make post request to create a new tweet followed by get reqeust to re-render page with new post
   const $form = $('#create-tweet');
   $form.submit(function (event) {
     event.preventDefault();

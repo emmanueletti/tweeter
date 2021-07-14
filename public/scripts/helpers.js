@@ -34,35 +34,23 @@ const createTweetElement = (data) => {
 
 // adds tweet markup to the dom
 const renderTweets = (data) => {
-  // loop throw each tweet in array of tweets
   data.forEach((tweetData) => {
-    // create tweet card markup from each tweet
     const tweet = createTweetElement(tweetData);
-
-    // add each tweet card markup to page
     $('#tweets-container').prepend(tweet);
   });
 };
 
 // makes get request and renders all data recieved
 const loadTweets = () => {
-  $.ajax({
-    url: '/tweets',
-    type: 'get',
-    success: function (data) {
-      renderTweets(data);
-    },
+  $.get('/tweets', function (data) {
+    renderTweets(data);
   });
 };
 
 // makes get request and only renders the newest tweet to prevent noticeable flashing
 const loadNewestTweets = () => {
-  $.ajax({
-    url: '/tweets',
-    type: 'get',
-    success: function (data) {
-      const newestTweet = data[data.length - 1];
-      renderTweets([newestTweet]);
-    },
+  $.get('/tweets', function (data) {
+    const newestTweet = data[data.length - 1];
+    renderTweets([newestTweet]);
   });
 };
