@@ -83,16 +83,19 @@ $(document).ready(() => {
     const chars = $('#tweet-text').val();
 
     if (chars.length > 140) {
+      $('#alert--empty').slideUp();
       $('#alert--long').slideDown();
       return;
     }
     if (!chars) {
+      $('#alert--long').slideUp();
       $('#alert--empty').slideDown();
       return;
     }
 
     $('#alert--long').slideUp();
     $('#alert--empty').slideUp();
+    $('.counter').val(140);
 
     $.ajax({
       url: '/tweets',

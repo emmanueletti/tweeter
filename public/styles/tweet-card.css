@@ -23,6 +23,8 @@
 }
 .header__handle {
   opacity: 0.5;
+  display: flex;
+  align-items: center;
 }
 
 .tweet-card__body {
